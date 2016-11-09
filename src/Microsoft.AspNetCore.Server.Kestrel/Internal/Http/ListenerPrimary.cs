@@ -208,7 +208,7 @@ namespace Microsoft.AspNetCore.Server.Kestrel.Internal.Http
             {
                 try
                 {
-                    dispatchPipe.Libuv.ThrowIfErrored(status);
+                    dispatchPipe.Libuv.Check(status);
 
                     _bytesRead += status;
 

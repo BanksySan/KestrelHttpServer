@@ -81,10 +81,10 @@ namespace Microsoft.AspNetCore.Server.KestrelTests
                 Assert.Equal("Primary", await HttpClientSlim.GetStringAsync(address.ToString()));
 
                 await listenerSecondary.DisposeAsync();
-                await kestrelThreadSecondary.StopAsync(TimeSpan.FromSeconds(1));
+                kestrelThreadSecondary.Stop(TimeSpan.FromSeconds(1));
 
                 await listenerPrimary.DisposeAsync();
-                await kestrelThreadPrimary.StopAsync(TimeSpan.FromSeconds(1));
+                kestrelThreadPrimary.Stop(TimeSpan.FromSeconds(1));
             }
         }
 
@@ -191,10 +191,10 @@ namespace Microsoft.AspNetCore.Server.KestrelTests
                 Assert.Equal("Primary", await HttpClientSlim.GetStringAsync(address.ToString()));
 
                 await listenerSecondary.DisposeAsync();
-                await kestrelThreadSecondary.StopAsync(TimeSpan.FromSeconds(1));
+                kestrelThreadSecondary.Stop(TimeSpan.FromSeconds(1));
 
                 await listenerPrimary.DisposeAsync();
-                await kestrelThreadPrimary.StopAsync(TimeSpan.FromSeconds(1));
+                kestrelThreadPrimary.Stop(TimeSpan.FromSeconds(1));
             }
 
             Assert.Equal(1, primaryTrace.Logger.TotalErrorsLogged);
